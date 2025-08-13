@@ -265,6 +265,12 @@
          padding: 40px 20px;
          text-align: center;
          justify-content: center;
+
+         background-size: cover;
+         background-position: 53% top;
+         background-repeat: no-repeat;
+         background-color: #191919;
+         min-height: 100vh;
      }
 
      .hero-content {
