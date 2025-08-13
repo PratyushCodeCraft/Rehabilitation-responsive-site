@@ -22,8 +22,9 @@ A fully responsive rehabilitation center website built using **HTML**, **CSS**, 
    ```bash
    git clone https://github.com/PratyushCodeCraft/Rehabilitation-responsive-site.git
 
-   👨‍💻 Author & Credits
- Pratyush Kumar
+   
+  ### **👨‍💻 Pratyush Kumar**
+
 
 GitHub: PratyushCodeCraft
 
