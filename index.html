@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Hazaribagh Jeevan Rehab Foundation</title>
 
+    <link rel="icon" href="./images/fab-icon.jpg" type="image/x-icon">
+
     <!-- Fonts  -->
     <link href="https://fonts.googleapis.com/css?family=Urbanist&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
@@ -16,10 +18,74 @@
     <!-- Effect -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8E7NL3SNN4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8E7NL3SNN4');
+    </script>
+
 
 </head>
 
 <body>
+
+    <div id="welcome-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button">&times;</span>
+            <h2>
+                <span class="welcome-shake">Welcome</span> to Hazaribagh Jeevan Rehab Foundation! 😊
+            </h2>
+            <p>
+                We're here to support you or your loved ones on the journey to recovery.
+                Explore our site to learn more about our holistic treatment programs and
+                how we can help you rebuild your life with dignity and hope.
+            </p>
+            <a href="#" class="btn-primary-promo">Get Help Now</a>
+        </div>
+    </div>
+
+    <!-- POPUP -->
+
+    <script>
+        var popup = document.getElementById("welcome-popup");
+        var closeButton = document.getElementsByClassName("close-button")[0];
+        var getHelpNowBtn = document.querySelector(".popup-content .btn-primary-promo");
+
+        function showPopup() {
+            // Agar current session me popup show nahi hua hai
+            if (!sessionStorage.getItem("popupShown")) {
+                popup.classList.add("show");
+                sessionStorage.setItem("popupShown", "true");
+            }
+        }
+
+        window.onload = function () {
+            showPopup();
+        };
+
+        if (closeButton) {
+            closeButton.onclick = function () {
+                popup.classList.remove("show");
+            };
+        }
+
+        if (getHelpNowBtn) {
+            getHelpNowBtn.onclick = function (event) {
+                event.preventDefault();
+                popup.classList.remove("show");
+            };
+        }
+
+        window.onclick = function (event) {
+            if (event.target == popup) {
+                popup.classList.remove("show");
+            }
+        };
+    </script>
 
     <!-- Navbar -->
     <header class="navbar">
@@ -28,13 +94,12 @@
                 <img src="./images/logo/Rehab.png" alt="Hazaribagh Jeevan Rehab Foundation Logo" class="nav-logo">
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about-us">About Us</a></li>
-                    <!-- <li><a href="#footer-services">Services</a></li> -->
-                    <li><a href="#contact-us">Contact Us</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="contactUs.html">Contact Us</a></li>
                 </ul>
             </nav>
             <div class="nav-right">
-                <a href="tel:+917903626587" class="appointment-btn">
+                <a href="tel:+919572678921" class="appointment-btn">
                     <img src="./images/logo/phone-icon.svg" alt="Phone" class="phone-icon">
                     Make An Appointment
                 </a>
@@ -42,9 +107,7 @@
             </div>
         </div>
     </header>
-
     <!-- //////////////////////////////////////////////////////////////////// -->
-
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
 
@@ -57,7 +120,8 @@
                 with dignity and compassion.
             </p>
             <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
-                <a href="https://wa.me/919572678921" target="_blank" class="btn-primary">Star Your Recovery Today-Talk To Our Experts →</a>
+                <a href="https://wa.me/919572678921" target="_blank" class="btn-primary">Star Your Recovery Today-Talk
+                    To Our Experts →</a>
                 <a href="#" class="btn-round">
                     <!-- <img src="../images/v269_40.png" alt="Play" /> -->
                     <img src="./images/logo/play-btn.svg" alt="Play" />
@@ -141,7 +205,7 @@
                         </div>
                         <span class="call-us-text">call us anytime</span>
                         <!-- <span class="call-us-number">9572 67 8921</span> -->
-                         <a href="tel:+919572678921" class="call-us-number">9572 67 8921</a>
+                        <a href="tel:+919572678921" class="call-us-number">9572 67 8921</a>
 
                     </div>
                 </div>
@@ -172,7 +236,8 @@
                         dependency, including detox, therapy, and relapse prevention tailored to each patient’s
                         condition.</p>
                 </div>
-                <a href="#" class="read-more">
+                <a href="01alcohol.html
+                " class="read-more">
                     <span>read more</span>
                     <!-- A simple arrow icon using SVG or a library could be added here -->
                 </a>
@@ -187,7 +252,7 @@
                     <p class="card-description">Comprehensive care for drug addiction involving medical detox,
                         psychological support, behavioral therapy, and long-term recovery planning.</p>
                 </div>
-                <a href="#" class="read-more">
+                <a href="02drug.html" class="read-more">
                     <span>read more</span>
                     <!-- A simple arrow icon using SVG or a library could be added here -->
                 </a>
@@ -202,7 +267,7 @@
                     <p class="card-description">Personalized one-on-one therapy sessions and group discussions to
                         address emotional trauma, behavioral triggers, and peer bonding during recovery.</p>
                 </div>
-                <a href="#" class="read-more">
+                <a href="03Individual.html" class="read-more">
                     <span>read more</span>
                     <!-- A simple arrow icon using SVG or a library could be added here -->
                 </a>
@@ -217,7 +282,7 @@
                     <p class="card-description">Counseling sessions for families to heal strained relationships, build
                         supportive environments, and understand addiction from a clinical perspective.</p>
                 </div>
-                <a href="#" class="read-more">
+                <a href="04family.html" class="read-more">
                     <span>read more</span>
                     <!-- A simple arrow icon using SVG or a library could be added here -->
                 </a>
@@ -232,7 +297,7 @@
                     <p class="card-description">Daily sessions that include calming practices like yoga, meditation, and
                         breathing exercises to promote mental clarity and emotional resilience.</p>
                 </div>
-                <a href="#" class="read-more">
+                <a href="05mindfulness.html" class="read-more">
                     <span>read more</span>
                     <!-- A simple arrow icon using SVG or a library could be added here -->
                 </a>
@@ -247,7 +312,7 @@
                     <p class="card-description">Ongoing monitoring and coping strategies to avoid relapse, with regular
                         check-ins and access to support networks even after discharge.</p>
                 </div>
-                <a href="#" class="read-more">
+                <a href="06relapse.html" class="read-more">
                     <span>read more</span>
                     <!-- A simple arrow icon using SVG or a library could be added here -->
                 </a>
@@ -262,7 +327,7 @@
                     <p class="card-description">Training in daily life skills, emotional management, goal setting, and
                         healthy routines — preparing individuals for a productive, addiction-free future.</p>
                 </div>
-                <a href="#" class="read-more">
+                <a href="07life.html" class="read-more">
                     <span>read more</span>
                     <!-- A simple arrow icon using SVG or a library could be added here -->
                 </a>
@@ -277,7 +342,7 @@
                     <p class="card-description">End-to-end coordination including patient pick-up, admission guidance,
                         and family support to ensure a smooth and stress-free onboarding process.</p>
                 </div>
-                <a href="#" class="read-more">
+                <a href="08admission.html" class="read-more">
                     <span>read more</span>
                     <!-- A simple arrow icon using SVG or a library could be added here -->
                 </a>
@@ -354,8 +419,8 @@
             </div>
         </div>
     </div>
-    <!-- /////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <div class="gallery-section">
+    <!-- ///////////////////////////////////////////////////////////////////////////// -->
+    <div class="gallery-section" id="gallery">
         <div class="gallery-header" data-aos="fade-up">
             <span class="gallery-title">Our Photo Gallery</span>
             <span class="gallery-description">
@@ -369,21 +434,23 @@
         </div>
         <div class="gallery-grid">
             <div class="gallery-item-wrapper" data-aos="zoom-in">
-                <div class="gallery-item" style="background-image: url('images/gallary-photo/WhatsApp\ Image\ 2025-09-02\ at\ 18.57.53_cdd92c77.jpg')"></div>
+                <div class="gallery-item"
+                    style="background-image: url('images/gallary-photo/WhatsApp\ Image\ 2025-09-02\ at\ 18.57.53_cdd92c77.jpg')">
+                </div>
                 <div class="gallery-item" style="background-image: url('images/gallary-photo/2nd-img.jpg')"></div>
             </div>
             <div class="gallery-item-wrapper" data-aos="zoom-in">
                 <div class="gallery-item" style="background-image:url('images/gallary-photo/3re-img.jpg')"></div>
                 <div class="gallery-item" style="background-image:url('images/gallary-photo/4th-img.jpg')"></div>
             </div>
-             <div class="gallery-item-wrapper" data-aos="zoom-in">
+            <div class="gallery-item-wrapper" data-aos="zoom-in">
                 <div class="gallery-item" style="background-image:url('images/gallary-photo/5th-img.jpg')"></div>
                 <div class="gallery-item" style="background-image:url('images/gallary-photo/6th-img.jpg')"></div>
-            </div> 
-             <div class="gallery-item-wrapper" data-aos="zoom-in">
+            </div>
+            <div class="gallery-item-wrapper" data-aos="zoom-in">
                 <div class="gallery-item" style="background-image:url('images/gallary-photo/7th-img.jpg')"></div>
                 <div class="gallery-item" style="background-image:url('images/gallary-photo/8th-img.jpg')"></div>
-            </div> 
+            </div>
         </div>
     </div>
     <!-- ///////////////////////////////////////////////////////////////////////////////// -->
@@ -392,9 +459,6 @@
         <div class="how-it-works-content">
             <div class="left-panel" data-aos="fade-right">
                 <div class="image-stack">
-                    <!-- The first image -->
-                    <!-- <img class="main-image-1" src="../images/v269_233.png" alt="Happy customers and care team"
-                        onerror="this.onerror=null;this.src='https://placehold.co/600x600/023E74/F1EBC9?text=Image+1';"> -->
 
                     <!-- The second image, on top -->
                     <img class="main-image-2" src="./images/v269_234.png" alt="Happy customers and care team 2"
@@ -403,8 +467,6 @@
                     <!-- The "Happy Customer" overlay box -->
                     <div class="image-overlay-1">
                         <div class="overlay-icon">
-                            <!-- <img src="../images/v269_237.png" alt="Happy customer icon"
-                                onerror="this.onerror=null;this.src='https://placehold.co/35x35/023E74/F1EBC9?text=Icon';"> -->
                             <img src="./images/logo/or.svg" alt="happy customer Icon" />
                         </div>
                         <div class="overlay-text">
@@ -416,8 +478,6 @@
                     <!-- The "Customer Support" overlay box -->
                     <div class="image-overlay-2">
                         <div class="overlay-icon" style="background-color: #191919;">
-                            <!-- <img src="../images/v269_243.png" alt="Customer support icon"
-                                onerror="this.onerror=null;this.src='https://placehold.co/35x35/191919/F1EBC9?text=Icon';"> -->
                             <img src="./images/logo/v.svg" alt="customer support icon" />
                         </div>
                         <div class="overlay-text-2">
@@ -465,12 +525,12 @@
         </div>
     </div>
 
-    <!-- /////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!-- ///////////////////////////////////////////////////////////////////////////////////// -->
 
     <!-- Testimonials Section -->
     <section id="contact-promo" class="contact-promo-section" data-aos="fade-up">
         <div class="contact-promo-container">
-            <h2 class="contact-promo-title">Begin Your Journey To Recovery</h2>
+            <h2 class="contact-promo-title">Begin Your Journey To Recovery 🫰</h2>
             <p class="contact-promo-text">
                 At Hazaribagh Jeevan Rehab Centre, we believe it's never too late to reclaim your life. Whether you or
                 your
@@ -489,7 +549,7 @@
                             d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
                         </path>
                     </svg>
-                    <a href="tel:+91-9288226587">+91-9572678921</a>
+                    <a href="tel:+91-9572678921">+91-9572678921</a>
                 </div>
                 <div class="contact-info-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -506,116 +566,20 @@
             </a>
         </div>
     </section>
-      <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    <!-- //////////////////////////   MAP SECTION  /////////////////////////////////////////////// -->
 
-            <div class="blog-section">
-      <div class="blog-header">
-        <span class="blog-heading">our blog</span>
-        <h2 class="blog-tagline">
-          We spread love to make living easy and happy.
-        </h2>
-      </div>
-
-      <div class="blog-posts-container scrollable-x">
-        <article class="blog-post-card">
-          <div class="blog-post-image blog-post-image-1">
-            <div class="blog-category"><span>Lifestyle</span></div>
-          </div>
-          <div class="blog-post-content">
-            <h3 class="blog-post-title">
-              Breaking the Chains: How Alcohol De-Addiction Transforms Lives
-            </h3>
-            <div class="blog-post-meta">
-              <span class="meta-author">
-                <img src="../images/v269_313.png" alt="Author Icon" /> tyas
-              </span>
-              <span class="meta-date">
-                <img src="../images/v269_317.png" alt="Date Icon" /> March 26,
-                2025
-              </span>
-              <span class="meta-comments">
-                <img src="../images/v269_320.png" alt="Comments Icon" /> 0
-              </span>
-            </div>
-            <p class="blog-post-description">
-              Alcoholism affects not just health, but also families and
-              self-confidence. At Hazaribagh Jeevan Rehab Centre, our alcohol
-              de-addiction program blends medical detox with emotional support.
-              Patients rediscover strength, rebuild relationships, and regain
-              control over their lives. Recovery is possible—and starts with the
-              right guidance.
-            </p>
-          </div>
-        </article>
-
-        <article class="blog-post-card">
-          <div class="blog-post-image blog-post-image-2">
-            <div class="blog-category"><span>Wellness</span></div>
-          </div>
-          <div class="blog-post-content">
-            <h3 class="blog-post-title">
-              Drug De-Addiction Isn’t the End—It’s a New Beginning
-            </h3>
-            <div class="blog-post-meta">
-              <span class="meta-author">
-                <img src="../images/v269_333.png" alt="Author Icon" /> tyas
-              </span>
-              <span class="meta-date">
-                <img src="../images/v269_337.png" alt="Date Icon" /> March 26,
-                2025
-              </span>
-              <span class="meta-comments">
-                <img src="../images/v269_340.png" alt="Comments Icon" /> 0
-              </span>
-            </div>
-            <p class="blog-post-description">
-              Addiction isolates, but recovery reconnects. Our drug de-addiction
-              programs include customized care, 24/7 support, and relapse
-              prevention. With the right approach and a healing space, many have
-              turned their lives around. This blog shares how that journey
-              begins—and why it works.
-            </p>
-          </div>
-        </article>
-
-        <article class="blog-post-card">
-          <div class="blog-post-image blog-post-image-3">
-            <div class="blog-category"><span>Caregiving</span></div>
-          </div>
-          <div class="blog-post-content">
-            <h3 class="blog-post-title">
-              Beyond Medicine: Yoga & Therapy in Recovery
-            </h3>
-            <div class="blog-post-meta">
-              <span class="meta-author">
-                <img src="../images/v269_353.png" alt="Author Icon" /> tyas
-              </span>
-              <span class="meta-date">
-                <img src="../images/v269_357.png" alt="Date Icon" /> March 26,
-                2025
-              </span>
-              <span class="meta-comments">
-                <img src="../images/v269_360.png" alt="Comments Icon" /> 0
-              </span>
-            </div>
-            <p class="blog-post-description">
-              True healing goes deeper than medication. That’s why we offer
-              yoga, meditation, and counseling to restore peace of mind. These
-              therapies help patients manage stress, improve focus, and embrace
-              sobriety with clarity. Discover how inner healing leads to lasting
-              recovery.
-            </p>
-          </div>
-        </article>
-      </div>
+    <div class="map-section">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3636.2530724642866!2d85.42094117391346!3d24.30280616734783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f36f2ba2eb726f%3A0xc45d54b2293e076c!2sHazaribag%20Jeevan%20Rehab%20Foundation%2FBest%20Nasha%20mukti%20kendra!5e0!3m2!1sen!2sin!4v1756995922502!5m2!1sen!2sin"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
     </div>
 
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-
-
-     ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <footer id="contact-us" class="footer-section" data-aos="fade-up">
+    <footer id="#" class="footer-section" data-aos="fade-up">
         <div class="footer-container">
             <!-- Main Footer Grid -->
             <div class="footer-grid">
@@ -644,11 +608,11 @@
                 <div class="footer-services-section">
                     <h4 class="section-heading">Our Services</h4>
                     <ul class="services-list">
-                        <li><a href="#">Alcohol De-Addiction Program</a></li>
-                        <li><a href="#">Drug De-Addiction Program</a></li>
-                        <li><a href="#">Psychiatric & Mental Health Support</a></li>
-                        <li><a href="#">Individual & Family Counseling</a></li>
-                        <li><a href="#">Medical Detoxification & Healthcare</a></li>
+                        <li><a href="01alcohol.html">Alcohol De-Addiction Program</a></li>
+                        <li><a href="02drug.html">Drug De-Addiction Program</a></li>
+                        <li><a href="05mindfulness.html">Psychiatric & Mental Health Support</a></li>
+                        <li><a href="03Individual.html">Individual & Family Counseling</a></li>
+                        <li><a href="04family.html">Medical Detoxification & Healthcare</a></li>
                         <li><a href="#">See all our services</a></li>
                     </ul>
                 </div>
@@ -657,35 +621,39 @@
                 <div class="footer-quick-links-section">
                     <h4 class="section-heading">Quick Links</h4>
                     <ul class="quick-links-list">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Gallery</a></li>
+                        <li><a href="aboutUs.html">About Us</a></li>
+                        <li><a href="contactUs.html">Contact</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#">Blogs</a></li>
                     </ul>
                 </div>
 
-                <!-- Newsletter Section -->
-                <div class="footer-newsletter-section">
+                <!-- form section -->
+                <form action="https://formspree.io/f/movnprlz" method="POST" class="footer-newsletter-section">
                     <h4 class="section-heading">Join Our Community & Get Expert Care Insights!</h4>
                     <div style="margin-top: 1.5rem;">
                         <div style="margin-bottom: 1rem;">
-                            <input type="email" placeholder="Your email here" class="newsletter-input">
+                            <input type="email" name="email" placeholder="Your email here" class="newsletter-input"
+                                required>
                         </div>
-                        <button class="subscribe-button">
+                        <button type="submit" class="subscribe-button">
                             Subscribe Now
                         </button>
                     </div>
-                </div>
+                </form>
 
                 <!-- Copyright Section - Now spans all columns -->
+
                 <div class="copyright">
                     Copyright &copy; 2025 Hazaribagh Jeevan Rehab Foundation. All Rights Reserved.
                 </div>
+
+            </div>
+            <div class="created-by">
+                © Created by XYZ
             </div>
         </div>
     </footer>
-
-
 
     <script>
 
@@ -703,7 +671,7 @@
 
             navItems.forEach(item => {
                 item.addEventListener('click', function () {
-                    navLinks.classList.remove('active'); // active class ko hata dega
+                    navLinks.classList.remove('active');
                 });
             });
         });
@@ -714,11 +682,105 @@
 
     <script>
         AOS.init({
-            duration: 1000, // animation duration
-            offset: 100, // kitne scroll pe start hoga
-            once: true // ek baar chale to dobara na ho
+            duration: 1000,
+            offset: 100,
+            once: true
         });
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Start of Tawk.to Script-->
+    <!-- <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/68bc2a170e49f131d3b5149a/1j4fg8s21';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script> -->
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/68bc46fa6198bb19234de2d6/1j4fnagvg';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--End of Tawk.to Script-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 

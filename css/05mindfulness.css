@@ -1,0 +1,825 @@
+/* ---------------- General Reset ---------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      overflow-x: hidden;
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
+      width: 100%;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+    /* ---------------- Root Colors ---------------- */
+    :root {
+      --nav-bg-start: #002d62;
+      --nav-bg-end: #007BFF;
+      --nav-text: #f1ebc9;
+      --nav-hover: #ffffff;
+      --nav-font-size: 16px;
+    }
+
+    /* ---------------- Navbar ---------------- */
+    .navbar {
+      margin: 0;
+      background: linear-gradient(90deg, var(--nav-bg-start) 0%, var(--nav-bg-end) 100%);
+      padding: 15px 0;
+      position: relative;
+      width: 100%;
+      z-index: 2000;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .nav-logo {
+      width: 200px;
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: var(--nav-text);
+      font-size: var(--nav-font-size);
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: var(--nav-hover);
+    }
+
+    /* Appointment Button */
+    .appointment-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--nav-text);
+      border: 1.5px solid var(--nav-text);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: var(--nav-font-size);
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      transition: all 0.3s ease;
+    }
+
+    .appointment-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .phone-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Hamburger Button */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--nav-text);
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* ---------------- Mobile ---------------- */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 80%;
+        background: var(--nav-bg-start);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 20px;
+        gap: 20px;
+        transition: right 0.5s ease-in-out;
+        z-index: 1999;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .appointment-btn {
+        display: none;
+      }
+
+      .nav-links li a {
+        font-size: 20px;
+        padding: 15px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+        z-index: 2001;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .container {
+        justify-content: space-between;
+      }
+    }
+
+/* ---------------- Hero Section ---------------- */
+
+ .hero {
+  background: url("../images/05mindfulness-img/Background.svg") center center / cover no-repeat;
+  min-height: 500px !important; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  margin-top: 0;
+  padding: 60px 20px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  color: #fff;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.breadcrumb {
+  display: inline-block;
+  background: #0d6efd;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.breadcrumb a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 250px;     
+    padding: 30px 10px;
+    background-position: center center; 
+    background-size: cover;  
+    background-repeat: no-repeat;
+  }
+
+  .hero-content h1 {
+    font-size: 1.4rem;
+  }
+
+  .breadcrumb {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 200px;
+    padding: 20px 10px;
+    background-position: right 35% center;
+    background-size: cover;
+  }
+
+  .hero-content h1 {
+    font-size: 1.2rem;
+  }
+} 
+
+
+/* //////////////////////////////////////////////////////////////// */
+
+/* ---------------- Program Section ---------------- */
+.program {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.program-card {
+  max-width: 1000px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.program-img {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.program-img img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Overlay small image (bigger size) */
+.program-img .overlay-img {
+  position: absolute;
+  top: 40%;       /* thoda upar adjust */
+  right: 8%;      /* right side se spacing */
+  width: 20%;     /* pehle 12% tha, ab badi */
+  max-width: 220px; /* desktop pe max bada */
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Text below image */
+.program-desc {
+  margin-top: 20px;
+}
+
+.program-desc p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* ------------ Responsive Breakpoints ------------ */
+@media (max-width: 768px) {
+  .program {
+    padding: 30px 15px;
+  }
+
+  .program-img .overlay-img {
+    width: 28%;       /* tablet pe aur thoda bada */
+    max-width: 180px;
+    top: 15%;
+    right: 6%;
+  }
+
+  .program-desc p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .program-img .overlay-img {
+    width: 35%;       /* mobile pe aur bada */
+    max-width: 160px;
+    top: 10%;
+    right: 5%;
+  }
+
+  .program-desc p {
+    font-size: 14px;
+  }
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
+/* ---------------- Facilities Section ---------------- */
+.facilities {
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.facility-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1100px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.facility-card img {
+  max-width: 300px;
+  border-radius: 12px;
+  flex: 1;
+}
+
+.facility-card div {
+  flex: 2;
+}
+
+.facility-card h2 {
+  margin-bottom: 15px;
+  color: #003366;
+}
+
+.facility-card ul {
+  list-style: none;
+}
+
+.facility-card li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.facility-card li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: green;
+}
+
+/* ---------------- Why Choose Us ---------------- */
+.why-us {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+}
+
+.why-us h2 {
+  margin-bottom: 20px;
+  color: #003366;
+}
+
+/* ---------------- CTA Section ---------------- */
+.cta {
+  background: linear-gradient(to right, #007bff, #003366);
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.cta h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.cta a {
+  color: #ffcc00;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 768px) {
+  /* body {
+    padding-top: 70px; 
+  } */
+
+  /* .hero {
+    height: 1600px;
+  } */
+
+  .hero-content h1 {
+    font-size: 1.4rem;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 80%;
+    background: var(--nav-bg-start);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    list-style: none;
+    gap: 20px;
+    transition: right 0.5s ease-in-out;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .appointment-btn {
+    display: none;
+  }
+
+  .nav-links li a {
+    font-size: 20px;
+    padding: 15px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 1000;
+  }
+
+  .facility-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .facility-card img {
+    max-width: 100%;
+  }
+}
+
+
+
+
+
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+
+ /* Reason For Choosing Us  */
+
+ /* Reason Section */
+.reason {
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.reason-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  max-width: 1100px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.reason-text {
+  flex: 1;
+}
+
+.reason-text h2 {
+  margin-bottom: 20px;
+  color: #222;
+  font-size: 22px;
+}
+
+.reason-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.reason-text li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+  font-size: 15px;
+  color: #444;
+}
+
+.reason-text li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.reason-img {
+  flex: 1;
+  text-align: center;
+}
+
+.reason-img img {
+  max-width: 100%;
+  border-radius: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reason-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .reason-text ul {
+    text-align: left;
+    display: inline-block;
+  }
+}
+
+
+/* ////////////////////////////////////////////////////////////////// */
+
+
+/* Final CTA Section */
+.cta-final {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.cta-final h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+}
+
+.cta-box {
+  max-width: 900px;
+  margin: auto;
+  background: linear-gradient(135deg, #0096ff, #003366);
+  color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.cta-box p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.cta-box strong {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 4px; /* Gap kam kar diya */
+}
+
+.cta-box a {
+  color: #ffeb3b;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.cta-box a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cta-box {
+    padding: 20px;
+  }
+
+  .cta-box p {
+    font-size: 16px;
+  }
+
+  .cta-box strong {
+    font-size: 18px;
+  }
+}
+
+
+
+/* /////////////////////////////////////////////////////////////////// */
+
+
+.back-home {
+  text-align: center;
+  margin: 40px 0;
+  overflow: hidden;
+}
+
+.back-home-text {
+  display: inline-block;
+  text-decoration: none;
+  color: #007BFF;   /* text ka color */
+  font-size: 18px;
+  font-weight: 600;
+  animation: floatX 3s ease-in-out infinite alternate;
+}
+
+/* Hover pe thoda dark shade */
+.back-home-text:hover {
+  color: #0056b3;
+}
+
+/* Floating horizontal animation */
+@keyframes floatX {
+  0% {
+    transform: translateX(-25px);
+  }
+  100% {
+    transform: translateX(25px);
+  }
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+ /* --- Footer Section --- */
+
+ /* Base Styles */
+ .footer-section {
+     background-color: #023E74;
+     color: #F1EBC9;
+     padding: 4rem 1rem;
+     font-family: 'Urbanist', sans-serif;
+ }
+
+ .footer-container {
+     max-width: 1280px;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ .footer-grid {
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 3rem;
+     padding-bottom: 2.5rem;
+     margin-bottom: 2rem;
+     border-bottom: 1px solid #3B668D;
+ }
+
+ /* For Logo, Phone and Socials */
+ .logo-contact-section {
+     display: flex;
+     flex-direction: column;
+     gap: 1.5rem;
+ }
+
+ .footer-logo {
+     width: 200px;
+     height: auto;
+     display: block;
+ }
+
+ .contact-heading {
+     font-family: 'Urbanist', sans-serif;
+     font-size: 2rem;
+     font-weight: 700;
+     line-height: 1.2;
+     margin-bottom: 0;
+ }
+
+ .phone-number {
+     font-family: 'Urbanist', sans-serif;
+     font-size: 2rem;
+     font-weight: 700;
+     color: white;
+ }
+
+ /* Headings for Services and Links */
+ .section-heading {
+     font-family: 'Urbanist', sans-serif;
+     font-size: 1.5rem;
+     font-weight: 700;
+     margin-bottom: 1.5rem;
+     color: white;
+ }
+
+ /* Social Links */
+ .social-links {
+     display: flex;
+     gap: 1rem;
+     margin-top: 1.5rem;
+ }
+
+ .social-link-icon {
+     background-color: #191919;
+     color: #F1EBC9;
+     padding: 0.5rem;
+     border-radius: 0.375rem;
+     transition: transform 300ms ease;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .social-link-icon:hover {
+     transform: scale(1.1);
+ }
+
+ .social-link-icon svg {
+     fill: #F1EBC9;
+ }
+
+ /* Lists and Links */
+ .services-list,
+ .quick-links-list {
+     list-style-type: none;
+     padding: 0;
+     margin: 0;
+     display: flex;
+     flex-direction: column;
+     gap: 0.75rem;
+ }
+
+ .services-list a,
+ .quick-links-list a {
+     color: inherit;
+     text-decoration: none;
+     transition: color 200ms ease;
+ }
+
+ .services-list a:hover,
+ .quick-links-list a:hover {
+     color: white;
+ }
+
+ /* Newsletter Subscription */
+ .newsletter-input {
+     width: 100%;
+     padding: 1rem;
+     border-radius: 0.75rem;
+     color: #4B5563;
+     border: none;
+     outline: none;
+ }
+
+ .subscribe-button {
+     width: 100%;
+     background-color: #F1EBC9;
+     color: #023E74;
+     font-family: 'Urbanist', sans-serif;
+     font-weight: 600;
+     padding: 1rem;
+     border-radius: 9999px;
+     transition: background-color 200ms ease;
+     border: none;
+     cursor: pointer;
+ }
+
+ .subscribe-button:hover {
+     background-color: #F8E48D;
+ }
+
+ /* Copyright Section */
+ .copyright {
+     text-align: center;
+     font-size: 0.875rem;
+     color: white;
+     margin-top: 2rem;
+     padding-top: 2rem;
+     border-top: 1px solid #3B668D;
+ }
+
+ /* Mobile Responsive adjustments */
+ @media (min-width: 768px) {
+     .footer-grid {
+         grid-template-columns: repeat(2, 1fr);
+         gap: 3rem;
+     }
+ }
+
+ @media (min-width: 1024px) {
+     .footer-grid {
+         grid-template-columns: repeat(4, 1fr);
+         gap: 2rem;
+     }
+
+     .copyright {
+         grid-column: 1 / -1;
+         /* This makes the copyright span all 4 columns */
+     }
+ }
