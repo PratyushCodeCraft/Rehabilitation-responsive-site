@@ -2071,10 +2071,11 @@
  }
  .created-by {
     position: absolute;
-    right: 0;       
+    right: 95px;       
     bottom: 20px;      
     color: #fff;       
-    font-size: 0.875rem;
+    /* font-size: 0.875rem; */
+    font-size: 0.500rem;;
     font-weight: 400;
     font-family: 'Urbanist', sans-serif;
     padding: 0 20px;
